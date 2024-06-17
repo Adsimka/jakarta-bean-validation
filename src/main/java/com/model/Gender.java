@@ -1,4 +1,4 @@
-package com.validation.model;
+package com.model;
 
 public enum Gender {
     FEMALE, MALE;

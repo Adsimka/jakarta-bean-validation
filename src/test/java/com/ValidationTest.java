@@ -1,13 +1,12 @@
-package com.validation;
+package com;
 
-import com.validation.model.Gender;
-import com.validation.model.User;
+import com.model.Gender;
+import com.model.User;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.executable.ExecutableValidator;
 import org.hibernate.validator.internal.engine.path.PathImpl;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.validation.model;
+package com.model;
 
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
