@@ -1,23 +1,23 @@
 package com.model;
 
 import com.validation.annotation.ValidUser;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@NoArgsConstructor
+@Setter
+@Getter
 @AllArgsConstructor
-@Data
-@Builder
 @ValidUser(maleMinAge = 18, femaleMinAge = 20)
-public class User {
+public abstract class User {
 
+    @NotNull
     private String name;
 
-    private int age;
-
+    @NotNull
     private Gender gender;
 
+    public abstract int getAge();
 
 }
