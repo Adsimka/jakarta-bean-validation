@@ -1,6 +1,6 @@
 package com.model;
 
-import jakarta.validation.constraints.Min;
+import com.validation.annotation.ValidUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
+@ValidUser(maleMinAge = 18, femaleMinAge = 20)
 public class User {
 
     private String name;
 
-    @Min(18)
     private int age;
 
     private Gender gender;

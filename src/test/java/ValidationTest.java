@@ -1,12 +1,9 @@
-package com;
-
 import com.model.Gender;
 import com.model.User;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.executable.ExecutableValidator;
-import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +12,6 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ValidationTest {
-
     Validator validator;
 
     ExecutableValidator executableValidator;
@@ -36,8 +32,6 @@ public class ValidationTest {
         Set<ConstraintViolation<User>> validate = validator.validate(user);
 
         assertEquals(1, validate.size());
-        assertEquals(PathImpl.createPathFromString("age"),
-                validate.iterator().next().getPropertyPath());
 
         System.err.println(validate);
     }

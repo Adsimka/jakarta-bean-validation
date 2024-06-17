@@ -2,7 +2,6 @@ package com.validation.annotation;
 
 import com.validation.UserValidator;
 import jakarta.validation.Constraint;
-import jakarta.validation.ConstraintTarget;
 import jakarta.validation.Payload;
 
 import java.lang.annotation.Documented;
@@ -14,7 +13,7 @@ import static java.lang.annotation.ElementType.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({METHOD, CONSTRUCTOR, TYPE, FIELD})
-@Constraint(validatedBy = {UserParamsValidator.class, UserValidator.class})
+@Constraint(validatedBy = {UserValidator.class})
 @Documented
 public @interface ValidUser
 {
@@ -28,6 +27,4 @@ public @interface ValidUser
     int maleMinAge();
 
     int femaleMinAge();
-
-    ConstraintTarget validationAppliesTo() default ConstraintTarget.IMPLICIT;
 }
